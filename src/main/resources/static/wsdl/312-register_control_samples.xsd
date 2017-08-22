@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by asdads (asd qwe) -->
+<!--Created with Liquid XML Studio Developer Edition 9.0.11.3078 (http://www.liquid-technologies.com)-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="base_types.xsd"/>
+	<xs:include schemaLocation="base_ref.xsd"/>
+	<xs:complexType name="register_control_samples">
+		<xs:annotation>
+			<xs:documentation>Регистрация в ИС «Маркировка» сведений об отборе образцов лекарственных препаратов</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="subject_id" type="subject_id_type">
+				<xs:annotation>
+					<xs:documentation>Идентификатор субъекта обращения в ИС "Маркировка товаров"</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="operation_date" type="datetimeoffset">
+				<xs:annotation>
+					<xs:documentation>Дата отбора образцов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="control_samples_type" type="control_samples_type_enum">
+				<xs:annotation>
+					<xs:documentation>Вид отбора образца</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="signs">
+				<xs:annotation>
+					<xs:documentation>Перечень идентификационных кодов потребительских упаковок с отобранными образцами</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="sgtin" type="sign_sgtin_type" maxOccurs="25000">
+							<xs:annotation>
+								<xs:documentation>Идентификатор SGTIN</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+				<xs:unique name="ux_rcs_sgtin">
+					<xs:selector xpath="sgtin"/>
+					<xs:field xpath="."/>
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="action_id" type="xs:int" use="required" fixed="312"/>
+	</xs:complexType>
+</xs:schema>

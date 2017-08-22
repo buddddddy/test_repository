@@ -1,0 +1,40 @@
+@collapse_panel-bg-color : @common-bg-color;
+@collapse_panel-title-font-family : @common-font-family-label;
+@collapse_panel-title-font-size : @common-font-size-input;
+@collapse_panel-title-fg-color : @common-fg-color;
+@collapse_panel-border-color : @common-fg-color-controls;
+
+.mdlp-common-collapse_panel {
+  .box-sizing(border-box);
+  padding: 0;
+  margin: 0;
+  border: 1px solid @collapse_panel-border-color;
+  border-bottom: none;
+  background-color: @collapse_panel-bg-color;
+  &:last-child {
+    border-bottom: 1px solid @collapse_panel-border-color;
+  }
+  .mdlp-common-collapse_panel-title {
+    .box-sizing(border-box);
+    cursor: pointer;
+    background: transparent url("@{common-images-path}collapse-arrow-down.png") 15px center no-repeat;
+    padding: 15px 15px 10px 40px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: @collapse_panel-title-font-family;
+    font-size: @collapse_panel-title-font-size;
+    color: @collapse_panel-title-fg-color;
+    overflow: hidden;
+  }
+  .mdlp-common-collapse_panel-content {
+    padding: 10px 15px 15px 20px;
+  }
+  &.collapsed {
+    .mdlp-common-collapse_panel-title {
+      background: transparent url("@{common-images-path}collapse-arrow-right.png") 15px center no-repeat;
+    }
+    .mdlp-common-collapse_panel-content {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "list" : [
+    {"regNumber" : "1111111", "regDate" : "2016-05-24", "gnvlp" : true , "producerINN" : "123456789012", "GTIN" : "0000000", "name" : "Аспирин", "form" : "1", "regOwnerName" : "ООО Абракадабра", "regExpirationDate" : 1490016152797, "regExpirationDateIsUnlimited" : false, "maxPrice" : "100.00"},
+    {"regNumber" : "1111111", "regDate" : "2016-05-24", "gnvlp" : false, "producerINN" : "123456789012", "GTIN" : "1111111", "name" : "Аспирин", "form" : "1", "regOwnerName" : "ООО Абракадабра", "regExpirationDate" : 1490016152797, "regExpirationDateIsUnlimited" : false, "maxPrice" : "101.00"},
+    {"regNumber" : "1111111", "regDate" : "2016-05-24", "gnvlp" : true , "producerINN" : "123456789012", "GTIN" : "2222222", "name" : "Аспирин", "form" : "1", "regOwnerName" : "ООО Абракадабра", "regExpirationDate" : 1490016152797, "regExpirationDateIsUnlimited" : false, "maxPrice" : "102.00"},
+    {"regNumber" : "1111111", "regDate" : "2016-05-24", "gnvlp" : false, "producerINN" : "123456789012", "GTIN" : "3333333", "name" : "Аспирин", "form" : "1", "regOwnerName" : "ООО Абракадабра", "regExpirationDate" : 1490016152797, "regExpirationDateIsUnlimited" : false, "maxPrice" : "103.00"},
+    {"regNumber" : "1111111", "regDate" : "2016-05-24", "gnvlp" : true , "producerINN" : "123456789012", "GTIN" : "4444444", "name" : "Аспирин", "form" : "1", "regOwnerName" : "ООО Абракадабра", "regExpirationDate" : 1490016152797, "regExpirationDateIsUnlimited" : true , "maxPrice" : "104.00"},
+    {"regNumber" : "1111111", "regDate" : "2016-05-24", "gnvlp" : false, "producerINN" : "123456789012", "GTIN" : "5555555", "name" : "Аспирин", "form" : "1", "regOwnerName" : "ООО Абракадабра", "regExpirationDate" : 1490016152797, "regExpirationDateIsUnlimited" : true , "maxPrice" : "105.00"},
+    {"regNumber" : "1111111", "regDate" : "2016-05-24", "gnvlp" : true , "producerINN" : "123456789012", "GTIN" : "6666666", "name" : "Аспирин", "form" : "1", "regOwnerName" : "ООО Абракадабра", "regExpirationDate" : 1490016152797, "regExpirationDateIsUnlimited" : true , "maxPrice" : "106.00"},
+    {"regNumber" : "1111111", "regDate" : "2016-05-24", "gnvlp" : false, "producerINN" : "123456789012", "GTIN" : "7777777", "name" : "Аспирин", "form" : "1", "regOwnerName" : "ООО Абракадабра", "regExpirationDate" : 1490016152797, "regExpirationDateIsUnlimited" : false, "maxPrice" : "107.00"},
+    {"regNumber" : "1111111", "regDate" : "2016-05-24", "gnvlp" : true , "producerINN" : "123456789012", "GTIN" : "8888888", "name" : "Аспирин", "form" : "1", "regOwnerName" : "ООО Абракадабра", "regExpirationDate" : 1490016152797, "regExpirationDateIsUnlimited" : false, "maxPrice" : "108.00"},
+    {"regNumber" : "1111111", "regDate" : "2016-05-24", "gnvlp" : false, "producerINN" : "123456789012", "GTIN" : "9999999", "name" : "Аспирин", "form" : "1", "regOwnerName" : "ООО Абракадабра", "regExpirationDate" : 1490016152797, "regExpirationDateIsUnlimited" : false, "maxPrice" : "109.00"}
+  ],
+  "total" : 30
+}

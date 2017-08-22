@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by asdads (asd qwe) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="200-result.xsd"/>
+	<xs:include schemaLocation="250-recall.xsd"/>
+	<xs:include schemaLocation="210-query_kiz_info.xsd"/>
+	<xs:include schemaLocation="211-kiz_info.xsd"/>
+	<xs:include schemaLocation="311-register_end_packing.xsd"/>
+	<xs:include schemaLocation="312-register_control_samples.xsd"/>
+	<xs:include schemaLocation="313-register_product_emission.xsd"/>
+	<xs:include schemaLocation="321-foreign_emission.xsd"/>
+	<xs:include schemaLocation="331-foreign_shipment.xsd"/>
+	<xs:include schemaLocation="332-foreign_import.xsd"/>
+	<xs:include schemaLocation="335-fts_data.xsd"/>
+	<xs:include schemaLocation="341-receive_importer.xsd"/>
+	<xs:include schemaLocation="381-move_owner.xsd"/>
+	<xs:include schemaLocation="382-receive_owner.xsd"/>
+	<xs:include schemaLocation="410-move_info.xsd"/>
+	<xs:include schemaLocation="411-move_order.xsd"/>
+	<xs:include schemaLocation="413-receive_order.xsd"/>
+	<xs:include schemaLocation="431-move_place.xsd"/>
+	<xs:include schemaLocation="511-retail_sale.xsd"/>
+	<xs:include schemaLocation="521-recipe.xsd"/>
+	<xs:include schemaLocation="531-health_care.xsd"/>
+	<xs:include schemaLocation="541-move_destruction.xsd"/>
+	<xs:include schemaLocation="542-destruction.xsd"/>
+	<xs:include schemaLocation="551-reexport.xsd"/>
+	<xs:include schemaLocation="552-withdrawal.xsd"/>
+	<xs:include schemaLocation="811-relabeling.xsd"/>
+	<xs:include schemaLocation="911-unit_pack.xsd"/>
+	<xs:include schemaLocation="912-unit_unpack.xsd"/>
+	<xs:include schemaLocation="913-unit_extract.xsd"/>
+	<xs:include schemaLocation="914-unit_append.xsd"/>
+	<xs:element name="documents" type="documents"/>
+	<xs:complexType name="documents">
+        <xs:choice>
+            <xs:element name="result" type="result">
+                <xs:annotation>
+                    <xs:documentation>200-Результат фиксации сведений в ИС «Маркировка»</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="recall" type="recall">
+                <xs:annotation>
+                    <xs:documentation>250-Регистрация сведений в ИС «Маркировка» об отзыве/отмене ранее совершенной операции</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="query_kiz_info" type="query_kiz_info">
+                <xs:annotation>
+                    <xs:documentation>210 - Запрос информации по номеру SGTIN/SSCC</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="kiz_info" type="kiz_info">
+                <xs:annotation>
+                    <xs:documentation>211 - Результат обработки сведений по номеру SGTIN/SSCC</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="register_end_packing" type="register_end_packing">
+                <xs:annotation>
+                    <xs:documentation>311 - Регистрация в ИС «Маркировка» сведений о завершении этапа окончательной упаковки</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="register_control_samples" type="register_control_samples">
+                <xs:annotation>
+                    <xs:documentation>312 - Регистрация в ИС «Маркировка» сведений об отборе образцов лекарственных препаратов</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="register_product_emission" type="register_product_emission">
+                <xs:annotation>
+                    <xs:documentation>313 - Регистрация в ИС «Маркировка» сведений о выпуске готовой продукции</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="foreign_emission" type="foreign_emission">
+                <xs:annotation>
+                    <xs:documentation>321 - Регистрация в ИС «Маркировка» сведений о выпуске готовой продукции представительством иностранного держателя регистрационного удостоверения </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="foreign_shipment" type="foreign_shipment">
+                <xs:annotation>
+                    <xs:documentation>331-Регистрация сведений в ИС «Маркировка» о отгрузке лекарственных препаратов в Российскую Федерацию со склада производителя</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="foreign_import" type="foreign_import">
+                <xs:annotation>
+                    <xs:documentation>332-Регистрация сведений в ИС «Маркировка» о загрузке сведений о ввозе лекарственных препаратов в Российскую Федерацию</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fts_data" type="fts_data">
+                <xs:annotation>
+                    <xs:documentation>335 - Регистрация Импортером в ИС «Маркировка» сведений о результатах таможенного оформления</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="receive_importer" type="receive_importer">
+                <xs:annotation>
+                    <xs:documentation>341-Регистрация Импортером в ИС «Маркировка» сведений о приемке лекарственных препаратов на склад</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="move_owner" type="move_owner">
+                <xs:annotation>
+                    <xs:documentation>381-Регистрация в ИС «Маркировка» сведений о передаче лекарственных препаратов собственнику</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="receive_owner" type="receive_owner">
+                <xs:annotation>
+                    <xs:documentation>382-Регистрация в ИС «Маркировка» сведений о приемке на склад лекарственных препаратов собственником</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="move_info" type="move_info">
+                <xs:annotation>
+                    <xs:documentation>410 - Регистрация сведений в ИС «Маркировка» об отгрузке лекарственных препаратов (без указания SGTIN)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="move_order" type="move_order">
+                <xs:annotation>
+                    <xs:documentation>411 - Регистрация сведений в ИС «Маркировка» об отгрузке лекарственных препаратов со склада Продавца</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="receive_order" type="receive_order">
+                <xs:annotation>
+                    <xs:documentation>413 - Регистрация сведений в ИС «Маркировка» о приеме лекарственных препаратов на склад Покупателя</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="move_place" type="move_place">
+                <xs:annotation>
+                    <xs:documentation>431 - Регистрация сведений в ИС «Маркировка» о перемещении лекарственных препаратов между различными адресами мест осуществления деятельности</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="retail_sale" type="retail_sale">
+                <xs:annotation>
+                    <xs:documentation>511 - Подача сведений о розничной продаже маркированной продукции</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="recipe" type="recipe">
+                <xs:annotation>
+                    <xs:documentation>521-Регистрация сведений в ИС «Маркировка» об отпуске лекарственного препарата по льготному рецепту</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="health_care" type="health_care">
+                <xs:annotation>
+                    <xs:documentation>531-Регистрация в ИС «Маркировка» сведений о выдаче лекарственного препарата с центрального аптечного склада в отделения для оказания медицинской помощи</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="move_destruction" type="move_destruction">
+                <xs:annotation>
+                    <xs:documentation>541-Регистрация сведений в ИС «Маркировка» о передаче лекарственных препаратов на уничтожение</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="destruction" type="destruction">
+                <xs:annotation>
+                    <xs:documentation>542 - Регистрация сведений в ИС «Маркировка» о факте уничтожения лекарственных препаратов</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="reexport" type="reexport">
+                <xs:annotation>
+                    <xs:documentation>551 - Регистрация сведений в ИС «Маркировка» об оформлении таможенной процедуры реэкспорта</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="withdrawal" type="withdrawal">
+                <xs:annotation>
+                    <xs:documentation>552 - Регистрация сведений в ИС «Маркировка» о выводе из оборота лекарственных препаратов с учетом различных типов вывода</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="relabeling" type="relabeling">
+                <xs:annotation>
+                    <xs:documentation>811 - Регистрация сведений в ИС «Маркировка» о переупаковке и перемаркировке лекарственных препаратов</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="unit_pack" type="unit_pack">
+                <xs:annotation>
+                    <xs:documentation>911 - Регистрация в ИС «Маркировка» сведений об операции упаковки в транспортную тару </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="unit_unpack" type="unit_unpack">
+                <xs:annotation>
+                    <xs:documentation>912 - Регистрация в ИС «Маркировка» сведений об операции расформирования транспортной упаковки</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="unit_extract" type="unit_extract">
+                <xs:annotation>
+                    <xs:documentation>913 - Регистрация в ИС «Маркировка» сведений об операции изъятия элементов упаковки</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="unit_append" type="unit_append">
+                <xs:annotation>
+                    <xs:documentation>914 - Регистрация в ИС «Маркировка» сведений об операции включения элементов в транспортную упаковку</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:choice>
+        <xs:attribute name="version" type="xs:string" use="required" fixed="1.12">
+            <xs:annotation>
+                <xs:documentation>Версия формата</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="session_ui" type="string200_type">
+            <xs:annotation>
+                <xs:documentation>Идентификатор, присвоенный запросу </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+</xs:schema>

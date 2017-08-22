@@ -1,0 +1,41 @@
+[
+    {
+        "gtin": "4607143560598",
+        "regOwnerName": "Акционерное общество \"Нижегородский химико-фармацевтический завод\" (АО \"Нижфарм\")",
+        "regExpirationDateIsUnlimited":true,
+        "title": "Кардионат капсулы 250 мг",
+        "commercialTitle": "Кардионат®",
+        "producerInn": "5260900010",
+        "producerTitle": "ООО \"Хемофарм\"",
+        "type": "капсулы",
+        "itemsInPackage": 40,
+        "dosage": "250 мг",
+        "maxPrice": "135.52"
+    },
+    {
+        "gtin": "4670012610151",
+        "regOwnerName": "АстраЗенека АБ",
+        "regExpirationDateIsUnlimited":true,
+        "title": "Брилинта таблетки, покрытые пленочной оболочкой, 90 мг №56",
+        "commercialTitle": "Брилинта®",
+        "producerInn": null,
+        "producerTitle": "ООО \"АстраЗенека Индастриз\"",
+        "type": "таблетки покрытые пленочной оболочкой",
+        "itemsInPackage": 56,
+        "dosage": "90 мг",
+        "maxPrice": "1562.32"
+    },
+    {
+        "gtin": "4607008360646",
+        "regOwnerName": "Общество с ограниченной ответственностью \"ГЕРОФАРМ\" (ООО \"ГЕРОФАРМ\")",
+        "regExpirationDate": "2020-09-22",
+        "title": "Раствор для приема внутрь \"цитиколин\" 100 мг/мл",
+        "commercialTitle": "Рекогнан®",
+        "producerInn": "7826043970",
+        "producerTitle": "ООО \"ГЕРОФАРМ\"",
+        "type": "раствор для приема внутрь",
+        "itemsInPackage": 1,
+        "dosage": "100 мг/мл",
+        "maxPrice": "586.65"
+    }
+]

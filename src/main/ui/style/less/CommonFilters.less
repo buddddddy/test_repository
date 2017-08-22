@@ -1,0 +1,29 @@
+.mdlp-common-filters {
+  width: 100%;
+  .mdlp-common-filters-head {
+    .box-sizing(border-box);
+    width: 100%;
+    padding-right: 13px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .mdlp-common-filters-head-title {
+
+    }
+  }
+  .mdlp-common-filters-scrollable {
+    width: 100%;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+  .mdlp-common-filters-apply {
+    display: block;
+    width: image-width("@{common-images-path}filter-apply.png");
+    height: image-height("@{common-images-path}filter-apply.png");
+    background: transparent url("@{common-images-path}filter-apply.png") center center no-repeat;
+  }
+}

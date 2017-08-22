@@ -1,0 +1,16 @@
+{
+  "list" : [
+    {"id" :  "1", "SGTIN" : "AB00000000000000000000000000000079", "seriesNumber" : "00", "producerINN" : "123456789012", "GTIN" : "0000000", "name" : "Аспирин", "statusId" : "2", "registrationDate" : 1490016152797, "inside" : "Вложение 0"},
+    {"id" :  "2", "SGTIN" : "AB00000000000000000000000000000079", "seriesNumber" : "11", "producerINN" : "123456789012", "GTIN" : "1111111", "name" : "Аспирин", "statusId" : "2", "registrationDate" : 1490016152797, "inside" : "Вложение 1"},
+    {"id" :  "3", "SGTIN" : "AB00000000000000000000000000000079", "seriesNumber" : "22", "producerINN" : "123456789012", "GTIN" : "2222222", "name" : "Аспирин", "statusId" : "2", "registrationDate" : 1490016152797, "inside" : "Вложение 2"},
+    {"id" :  "4", "SGTIN" : "AB00000000000000000000000000000079", "seriesNumber" : "33", "producerINN" : "123456789012", "GTIN" : "3333333", "name" : "Аспирин", "statusId" : "2", "registrationDate" : 1490016152797, "inside" : "Вложение 3"},
+    {"id" :  "5", "SGTIN" : "AB00000000000000000000000000000079", "seriesNumber" : "44", "producerINN" : "123456789012", "GTIN" : "4444444", "name" : "Аспирин", "statusId" : "2", "registrationDate" : 1490016152797, "inside" : "Вложение 4"},
+    {"id" :  "6", "SGTIN" : "AB00000000000000000000000000000079", "seriesNumber" : "55", "producerINN" : "123456789012", "GTIN" : "5555555", "name" : "Аспирин", "statusId" : "2", "registrationDate" : 1490016152797, "inside" : "Вложение 5"},
+    {"id" :  "7", "SGTIN" : "AB00000000000000000000000000000079", "seriesNumber" : "66", "producerINN" : "123456789012", "GTIN" : "6666666", "name" : "Аспирин", "statusId" : "2", "registrationDate" : 1490016152797, "inside" : "Вложение 6"},
+    {"id" :  "8", "SGTIN" : "AB00000000000000000000000000000079", "seriesNumber" : "77", "producerINN" : "123456789012", "GTIN" : "7777777", "name" : "Аспирин", "statusId" : "2", "registrationDate" : 1490016152797, "inside" : "Вложение 7"},
+    {"id" :  "9", "SGTIN" : "AB00000000000000000000000000000079", "seriesNumber" : "88", "producerINN" : "123456789012", "GTIN" : "8888888", "name" : "Аспирин", "statusId" : "2", "registrationDate" : 1490016152797, "inside" : "Вложение 8"},
+    {"id" : "10", "SGTIN" : "AB00000000000000000000000000000079", "seriesNumber" : "99", "producerINN" : "123456789012", "GTIN" : "9999999", "name" : "Аспирин", "statusId" : "2", "registrationDate" : 1490016152797, "inside" : "Вложение 9"}
+  ],
+  "total" : 30,
+  "lazyMode" : false
+}

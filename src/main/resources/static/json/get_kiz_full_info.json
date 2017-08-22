@@ -1,0 +1,22 @@
+{
+  "id"                      : 1,
+  "name"                    : "КиЗ 1",
+  "producer"                : "“ООО Ромашка“",
+  "INN"                     : "1234566785",
+  "KPP"                     : "34636781125",
+  "SGTIN"                   : "1",
+  "producerINN"             : "1234566785",
+  "packerINN"               : "34636781125",
+  "orderType"               : "",
+  "seriesNumber"            : "2",
+  "producerKPP"             : "5000066785",
+  "packerKPP"               : "410006781109",
+  "GTIN"                    : "1 (жизненно важный лекарственный препарат)",
+  "lpName"                  : "„ Ацетилсалициловая кислота“",
+  "expirationDate"          : "01.10.2019",
+  "dosageForm"              : "Таблетки",
+  "registrationCertificate" : "№ 1234135435673 от 10.10.2008, действует до 10.10.2025",
+  "tradeName"               : "„Аспирин Экспресс“",
+  "dosage"                  : "20 мг",
+  "packageCompleteness"     : "20 шт."
+}

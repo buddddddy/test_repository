@@ -1,0 +1,115 @@
+{
+  "list"  : [
+    {
+      "reg_id" : "ЛС-000612",
+      "PROD_NAME" : "Мельдоний",
+      "PROD_SELL_NAME" : "Кардионат®",
+      "PROD_FORM_NAME" : "капсулы",
+      "REG_HOLDER_CODE" : "1111111111",
+      "REG_HOLDER" : "ООО Абракадабра",
+      "REG_DATE" : { "$date" : "2010-06-21" },
+      "REG_END_DATE" : "",
+      "REG_STATUS" : "1"
+    },
+    {
+      "reg_id" : "ЛС-000612",
+      "PROD_NAME" : "Мельдоний",
+      "PROD_SELL_NAME" : "Кардионат®",
+      "PROD_FORM_NAME" : "капсулы",
+      "REG_HOLDER_CODE" : "1111111111",
+      "REG_HOLDER" : "ООО Абракадабра",
+      "REG_DATE" : { "$date" : "2010-06-21" },
+      "REG_END_DATE" : { "$date" : "2018-06-21" },
+      "REG_STATUS" : "1"
+    },
+    {
+      "reg_id" : "ЛС-000612",
+      "PROD_NAME" : "Мельдоний",
+      "PROD_SELL_NAME" : "Кардионат®",
+      "PROD_FORM_NAME" : "капсулы",
+      "REG_HOLDER_CODE" : "1111111111",
+      "REG_HOLDER" : "ООО Абракадабра",
+      "REG_DATE" : { "$date" : "2010-06-21" },
+      "REG_END_DATE" : { "$date" : "2016-06-21" },
+      "REG_STATUS" : "1"
+    },
+    {
+      "reg_id" : "ЛС-000612",
+      "PROD_NAME" : "Мельдоний",
+      "PROD_SELL_NAME" : "Кардионат®",
+      "PROD_FORM_NAME" : "капсулы",
+      "REG_HOLDER_CODE" : "1111111111",
+      "REG_HOLDER" : "ООО Абракадабра",
+      "REG_DATE" : { "$date" : "2010-06-21" },
+      "REG_END_DATE" : { "$date" : "2018-06-21" },
+      "REG_STATUS" : "1"
+    },
+    {
+      "reg_id" : "ЛС-000612",
+      "PROD_NAME" : "Мельдоний",
+      "PROD_SELL_NAME" : "Кардионат®",
+      "PROD_FORM_NAME" : "капсулы",
+      "REG_HOLDER_CODE" : "1111111111",
+      "REG_HOLDER" : "ООО Абракадабра",
+      "REG_DATE" : { "$date" : "2010-06-21" },
+      "REG_END_DATE" : { "$date" : "2018-06-21" },
+      "REG_STATUS" : "1"
+    },
+    {
+      "reg_id" : "ЛС-000612",
+      "PROD_NAME" : "Мельдоний",
+      "PROD_SELL_NAME" : "Кардионат®",
+      "PROD_FORM_NAME" : "капсулы",
+      "REG_HOLDER_CODE" : "1111111111",
+      "REG_HOLDER" : "ООО Абракадабра",
+      "REG_DATE" : { "$date" : "2010-06-21" },
+      "REG_END_DATE" : { "$date" : "2018-06-21" },
+      "REG_STATUS" : "1"
+    },
+    {
+      "reg_id" : "ЛС-000612",
+      "PROD_NAME" : "Мельдоний",
+      "PROD_SELL_NAME" : "Кардионат®",
+      "PROD_FORM_NAME" : "капсулы",
+      "REG_HOLDER_CODE" : "1111111111",
+      "REG_HOLDER" : "ООО Абракадабра",
+      "REG_DATE" : { "$date" : "2010-06-21" },
+      "REG_END_DATE" : { "$date" : "2018-06-21" },
+      "REG_STATUS" : "1"
+    },
+    {
+      "reg_id" : "ЛС-000612",
+      "PROD_NAME" : "Мельдоний",
+      "PROD_SELL_NAME" : "Кардионат®",
+      "PROD_FORM_NAME" : "капсулы",
+      "REG_HOLDER_CODE" : "1111111111",
+      "REG_HOLDER" : "ООО Абракадабра",
+      "REG_DATE" : { "$date" : "2010-06-21" },
+      "REG_END_DATE" : { "$date" : "2018-06-21" },
+      "REG_STATUS" : "1"
+    },
+    {
+      "reg_id" : "ЛС-000612",
+      "PROD_NAME" : "Мельдоний",
+      "PROD_SELL_NAME" : "Кардионат®",
+      "PROD_FORM_NAME" : "капсулы",
+      "REG_HOLDER_CODE" : "1111111111",
+      "REG_HOLDER" : "ООО Абракадабра",
+      "REG_DATE" : { "$date" : "2010-06-21" },
+      "REG_END_DATE" : { "$date" : "2018-06-21" },
+      "REG_STATUS" : "1"
+    },
+    {
+      "reg_id" : "ЛС-000612",
+      "PROD_NAME" : "Мельдоний",
+      "PROD_SELL_NAME" : "Кардионат®",
+      "PROD_FORM_NAME" : "капсулы",
+      "REG_HOLDER_CODE" : "1111111111",
+      "REG_HOLDER" : "ООО Абракадабра",
+      "REG_DATE" : { "$date" : "2010-06-21" },
+      "REG_END_DATE" : { "$date" : "2018-06-21" },
+      "REG_STATUS" : "1"
+    }
+  ],
+  "total" : 30
+}

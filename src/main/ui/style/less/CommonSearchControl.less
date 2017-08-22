@@ -1,0 +1,43 @@
+@common-search-control-width : 270px;
+@common-search-control-submit-size : 28px;
+@common-search-control-bg-color : @common-bg-color-alt1;
+@common-search-control-disabled-bg-color : @common-bg-color-alt2;
+
+.mdlp-common-search-control {
+  .box-sizing(border-box);
+  width: @common-search-control-width;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 0;
+
+  input[type=text] {
+    display: block;
+    .box-sizing(border-box);
+    width: 100%;
+    padding: 5px 10px;
+    font-size: @control-text-font-size-input;
+    color: @control-text-fg-color-input;
+    background-color: @control-text-bg-color-input;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid @control-text-border-color-input;
+    border-right: none;
+    border-radius: 0; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+    .form-control-focus(@control-text-border-color-input);
+    .placeholder(@control-text-fg-color-input);
+  }
+
+  input[type=submit] {
+    width: @common-search-control-submit-size;
+    height: @common-search-control-submit-size;
+    background: @common-search-control-bg-color url("@{common-images-path}search-icon-smal.png") center center no-repeat;
+    background-size: 18px 18px;
+    border: 1px solid @control-text-border-color-input;
+    cursor: pointer;
+    &:disabled {
+      background-color: @common-search-control-disabled-bg-color;
+      cursor: inherit;
+    }
+  }
+}

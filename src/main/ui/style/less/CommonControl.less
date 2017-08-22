@@ -1,0 +1,175 @@
+@control-font-size : @common-font-size-small;
+@control-labels_fg-color : @common-fg-color;
+
+@control-checkbox-min-height : image-height("@{common-images-path}chbox-unchecked.png");
+@control-checkbox-min-width  : image-width("@{common-images-path}chbox-unchecked.png");
+
+@control-text-bg-color-input     : @common-bg-color-input;
+@control-text-font-size-input    : @common-font-size-input;
+@control-text-fg-color-input     : @commom-fg-color-input;
+@control-text-border-color-input : @common-border-color-input;
+
+@control-date-dropper-min-height : image-height("@{common-images-path}datepicker.png");
+@control-date-dropper-min-width  : image-width("@{common-images-path}datepicker.png");
+@control-date-dropper-calendar-bg-color : @common-bg-color;
+
+.mdlp-common-control {
+  display: block;
+  position: relative;
+  min-height: @control-checkbox-min-height;
+  margin-bottom: 10px;
+  font-size: @control-font-size;
+  label {
+    color: @control-labels_fg-color;
+  }
+  input[type=text]:not(.default), select:not(.default) {
+    display: block;
+    .box-sizing(border-box);
+    width: 100%;
+    padding: 10px 15px;
+    font-size: @control-text-font-size-input;
+    color: @control-text-fg-color-input;
+    background-color: @control-text-bg-color-input;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 2px solid @control-text-border-color-input;
+    border-radius: 0; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+    .form-control-focus(@control-text-border-color-input);
+    .placeholder(@control-text-fg-color-input);
+  }
+
+  &.checkbox {
+    & > input {
+      position: absolute;
+      left: -1000px;
+      & + label {
+        display: block;
+        padding-left: @control-checkbox-min-width + 10px;
+        min-width: @control-checkbox-min-width;
+        height: @control-checkbox-min-height;
+        line-height: @control-checkbox-min-height;
+        vertical-align: middle;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        background: transparent url("@{common-images-path}chbox-unchecked.png") 0 center no-repeat;
+        cursor: pointer;
+      }
+      &:checked + label {
+        background: transparent url("@{common-images-path}chbox-checked.png") 0 center no-repeat;
+      }
+    }
+  }
+
+  @slider-height : 15px;
+  @slider-color : #0066B3;
+  @slider-transition-time : 0.5s;
+  &.switch {
+    margin-bottom: 0;
+    & > input {
+      position: absolute;
+      left: -1000px;
+      & + label {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        vertical-align: middle;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        &::before {
+          content: attr(data-title-unchecked);
+        }
+        .slider {
+          position: relative;
+          display: block;
+          width: @slider-height * 2;
+          height: @slider-height;
+          border-radius: (@slider-height + 1) / 2;
+          margin-left: 10px;
+          border: 1px solid @slider-color;
+          background-color: transparent;
+          transition: background-color @slider-transition-time;
+          &::after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            width: @slider-height;
+            height: @slider-height;
+            border-radius: (@slider-height + 1) / 2;
+            border: 1px solid @slider-color;
+            background-color: #FFF;
+            left: -1px;
+            top: -1px;
+            transition: left @slider-transition-time;
+          }
+        }
+      }
+      &:checked + label {
+        font-weight: 600;
+        //background: transparent url("@{common-images-path}chbox-checked.png") 0 center no-repeat;
+        &::before {
+          content: attr(data-title-checked);
+        }
+        .slider {
+          background-color: @slider-color;
+          transition: background-color @slider-transition-time;
+          &::after {
+            left: (@slider-height * 2) - (@slider-height) + 1;
+            transition: left @slider-transition-time;
+          }
+        }
+      }
+    }
+  }
+
+  &.text, &.date {
+    &.label-left {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      & > label {
+        min-width: 20px;
+        margin-right: 5px;
+        text-align: right;
+      }
+    }
+    &.label-up {
+      & > label {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &.date {
+    .mdlp-common-control-date-dropper {
+      position: relative;
+      margin-left: 5px;
+      .mdlp-common-control-date-dropper-btn {
+        display: block;
+        width: @control-date-dropper-min-width;
+        height: @control-date-dropper-min-height;
+        background: transparent url("@{common-images-path}datepicker.png") 0 center no-repeat;
+        cursor: pointer;
+      }
+      .mdlp-common-control-date-dropper-calendar {
+        display: none;
+        -webkit-box-shadow: 0px 0px 25px -2px rgba(0,0,0,1);
+        -moz-box-shadow: 0px 0px 25px -2px rgba(0,0,0,1);
+        box-shadow: 0px 0px 25px -2px rgba(0,0,0,1);
+        background: @control-date-dropper-calendar-bg-color;
+      }
+      &.opened {
+        .mdlp-common-control-date-dropper-calendar {
+          display: block;
+          position: absolute;
+          z-index: 20;
+          bottom: 26px;
+          left: -100px;
+        }
+      }
+    }
+  }
+}

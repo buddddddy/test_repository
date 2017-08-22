@@ -1,0 +1,63 @@
+{
+  "members"  : 12225,
+  "drugs"    : 64048,
+  "sales"    : 125258,
+  "dynamics" : [
+    {
+      "monthYear" : "2017-01-01",
+      "rates"     : {
+        "members" : { "currentValue" : 2311, "previousValue" : 2033 },
+        "drugs"   : { "currentValue" : 4855, "previousValue" : 3787 },
+        "sales"   : { "currentValue" : 4200, "previousValue" : 5670 }
+      }
+    },
+    {
+      "monthYear" : "2017-02-01",
+      "rates"     : {
+        "members" : { "currentValue" : 4500, "previousValue" : 3960 },
+        "drugs"   : { "currentValue" : 6800, "previousValue" : 5304 },
+        "sales"   : { "currentValue" : 5300, "previousValue" : 7155 }
+      }
+    },
+    {
+      "monthYear" : "2017-03-01",
+      "rates"     : {
+        "members" : { "currentValue" : 3800, "previousValue" : 3344 },
+        "drugs"   : { "currentValue" : 4950, "previousValue" : 3861 },
+        "sales"   : { "currentValue" : 4000, "previousValue" : 5400 }
+      }
+    },
+    {
+      "monthYear" : "2017-04-01",
+      "rates"     : {
+        "members" : { "currentValue" : 123, "previousValue" : 108 },
+        "drugs"   : { "currentValue" : 770, "previousValue" : 601 },
+        "sales"   : { "currentValue" : 560, "previousValue" : 756 }
+      }
+    },
+    {
+      "monthYear" : "2017-05-01",
+      "rates"     : {
+        "members" : { "currentValue" : 1250, "previousValue" : 1100 },
+        "drugs"   : { "currentValue" : 8950, "previousValue" : 6981 },
+        "sales"   : { "currentValue" : 4600, "previousValue" : 6210 }
+      }
+    },
+    {
+      "monthYear" : "2017-06-01",
+      "rates"     : {
+        "members" : { "currentValue" : 3200, "previousValue" : 2816 },
+        "drugs"   : { "currentValue" : 4560, "previousValue" : 3557 },
+        "sales"   : { "currentValue" : 4230, "previousValue" : 5711 }
+      }
+    },
+    {
+      "monthYear" : "2017-07-01",
+      "rates"     : {
+        "members" : { "currentValue" :  30, "previousValue" :  26 },
+        "drugs"   : { "currentValue" : 215, "previousValue" : 168 },
+        "sales"   : { "currentValue" : 135, "previousValue" : 182 }
+      }
+    }
+  ]
+}

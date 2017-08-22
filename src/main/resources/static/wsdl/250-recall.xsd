@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by asdads (asd qwe) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="base_ref.xsd"/>
+	<xs:include schemaLocation="base_types.xsd"/>
+	<xs:complexType name="recall">
+		<xs:annotation>
+			<xs:documentation>Регистрация сведений в ИС «Маркировка» об отзыве/отмене ранее совершенной операции</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="subject_id" type="subject_any_type">
+				<xs:annotation>
+					<xs:documentation>Идентификатор организации-отправителя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="session_ui" type="string200_type">
+				<xs:annotation>
+					<xs:documentation>Идентификатор запроса, подлежащего отмене</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="recall_action_id" type="recall_type_enum">
+				<xs:annotation>
+					<xs:documentation>Тип исходной операции</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reason" type="string500_type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Описание причины отзыва</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="action_id" type="xs:int" use="required" fixed="250"/>
+	</xs:complexType>
+</xs:schema>

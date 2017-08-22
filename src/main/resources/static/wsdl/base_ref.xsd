@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by asdads (asd qwe) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="base_types.xsd"/>
+	<xs:complexType name="short_org_info_type">
+		<xs:annotation>
+			<xs:documentation>Описание организации</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="organisation_name" type="string500_type">
+				<xs:annotation>
+					<xs:documentation>Наименование организации / ИП</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="email" type="string200_type">
+				<xs:annotation>
+					<xs:documentation>Электронная почта</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="ul">
+					<xs:annotation>
+						<xs:documentation>Организация - юр. лицо</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="inn" type="inn_ul_type">
+								<xs:annotation>
+									<xs:documentation>ИНН ЮЛ</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="kpp" type="kpp_type">
+								<xs:annotation>
+									<xs:documentation>КПП</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="fl">
+					<xs:annotation>
+						<xs:documentation>Организация - физическое лицо</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="inn" type="inn_fl_type">
+								<xs:annotation>
+									<xs:documentation>ИНН ФЛ</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="sign_ids_type">
+		<xs:annotation>
+			<xs:documentation>Идентификаторы знака </xs:documentation>
+		</xs:annotation>
+		<xs:sequence maxOccurs="2">
+			<xs:choice>
+				<xs:element name="sgtin" type="sign_sgtin_type">
+					<xs:annotation>
+						<xs:documentation>Номер КиЗ</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="sscc" type="sscc_type">
+					<xs:annotation>
+						<xs:documentation>Номер третичной/транспортной упаковки</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="fias_addr_type">
+		<xs:annotation>
+			<xs:documentation>Адрес по ФИАС</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="aoguid" type="guid_type">
+				<xs:annotation>
+					<xs:documentation>Глобальный уникальный идентификатор адресного объекта </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="houseguid" type="guid_type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Глобальный уникальный идентификатор дома</xs:documentation>
+					<xs:documentation>Обязателен при наличии</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="flat" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Квартира</xs:documentation>
+					<xs:documentation>Обязателен при наличии</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="fts_gtd_info_type">
+		<xs:annotation>
+			<xs:documentation>Состав сведений, передаваемых при подаче таможенной декларации</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="customs_code" type="fts_customs_code_type">
+				<xs:annotation>
+					<xs:documentation>Код таможенного органа</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registration_date" type="date_type">
+				<xs:annotation>
+					<xs:documentation>Дата регистрации декларации на товары</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="gtd_number">
+				<xs:annotation>
+					<xs:documentation>Регистрационный номер декларации на товары</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="7"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

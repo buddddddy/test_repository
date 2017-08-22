@@ -1,0 +1,40 @@
+mixin page(appId, title, incName)
+    - var bodyClass = (appId == 'login') ? '' : 'not-ready';
+    - var mainClass = (appId == 'login') ? ' mdlp-login' : '';
+    html(lang="en")
+        head
+            meta(charset="utf-8")
+            meta(name="viewport", content="width=device-width, initial-scale=1.0")
+            <!--[if IE]>
+            meta(http-equiv="Cache-Control" content="no-cache")
+            <![endif]-->
+            title #{title}Личный кабинет сотрудника ФНС России. МДЛП
+            link(rel="stylesheet", href="css/"+incName+".css")
+            - if (appId == 'kiz_timeline')
+                link(rel="stylesheet", href="timeline/css/demo/reset.css")
+                link(rel="stylesheet", href="timeline/css/plugins/animate.css")
+                link(rel="stylesheet", href="timeline/css/default.css")
+                //link(rel="stylesheet", href="timeline/css/demo/demo.css")
+                link(rel="stylesheet", href="timeline/css/frst-timeline-style-1.css")
+                script(src="timeline/modernizr.js")
+        body(class=bodyClass)
+            div(class="mdlp-page-main"+mainClass)
+                div.mdlp-page-header
+                    div.mdlp-page-header-messages#mdlp-common-messages
+                    - if (appId != 'login')
+                        a#mdlp-user-info.mdlp-page-user_info
+                        a.mdlp-page-exit(href="/logout") Выйти
+                div.mdlp-page-content
+                    div.mdlp-page-title
+                        a.mdlp-page-title-logo#js-page-title-logo(href="#")
+                            img#js-page-title-logo-img
+                        h1.mdlp-page-title-text#js-page-title-text
+                    div.mdlp-page-react#react-container
+                div.mdlp-page-debug-log-placeholder#react-debug-log-container
+                div.mdlp-page-footer
+                    span.mdlp-page-footer-version#js-page-footer-version
+                    span.mdlp-page-footer-copyright#js-page-footer-copyright
+            script(src="js/"+incName+".js")
+            - if (appId == 'kiz_timeline')
+                script(src="timeline/jquery-3.1.1.min.js")
+                script(src="timeline/frst-timeline.min.js")

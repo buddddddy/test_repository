@@ -1,0 +1,152 @@
+[
+  {
+    "id"    : "subject_register",
+    "title" : "Регистрация субъектов",
+    "state" : "",
+    "class" : ""
+  },
+  {
+    "id"    : "register_end_packing",
+    "title" : "Завершение упаковки",
+    "state" : "start",
+    "class" : "create"
+  },
+  {
+    "id"    : "register_control_samples",
+    "title" : "Отбор образцов ЛП",
+    "state" : "middle",
+    "class" : ""
+  },
+  {
+    "id"    : "register_product_emission",
+    "title" : "Выпуск готовой продукции",
+    "state" : "start",
+    "class" : "create"
+  },
+  {
+    "id"    : "move_order_s",
+    "title" : "Отгрузка ЛП со склада",
+    "class" : "move",
+    "state" : "middle"
+  },
+  {
+    "id"    : "receive_order_s",
+    "title" : "Прием ЛП на склад",
+    "class" : "accept",
+    "state" : "middle"
+  },
+  {
+    "id"    : "move_order_cancel",
+    "title" : "Отмена заявки на отгрузку",
+    "class" : "",
+    "state" : "middle"
+  },
+  {
+    "id"    : "retail_sale",
+    "title" : "Розничная продажа",
+    "class" : "sale",
+    "state" : "finish"
+  },
+  {
+    "id"    : "health_care",
+    "title" : "Использовано в медицине",
+    "class" : "sale",
+    "state" : "finish"
+  },
+  {
+    "id"    : "recipe",
+    "title" : "Отпущен по льготному рецепту",
+    "class" : "sale",
+    "state" : "finish"
+  },
+  {
+    "id"    : "move_owner",
+    "title" : "Отгрузка ЛП собственнику",
+    "class" : "move",
+    "state" : "middle"
+  },
+  {
+    "id"    : "receive_owner",
+    "title" : "Приемка ЛП собственником",
+    "class" : "move",
+    "state" : "middle"
+  },
+  {
+    "id"    : "control_samples",
+    "title" : "Отбор образцов",
+    "class" : "accept",
+    "state" : "finish"
+  },
+  {
+    "id"    : "register_foreign_product_emission",
+    "title" : "Выпуск ЛП (иностранный держатель РУ)",
+    "class" : "create",
+    "state" : "start"
+  },
+  {
+    "id"    : "receive_importer",
+    "title" : "Ввод в оборот (иностранный производитель)",
+    "class" : "create",
+    "state" : "start"
+  },
+  {
+    "id"    : "withdrawal",
+    "title" : "Вывод из оборота",
+    "class" : "sale",
+    "state" : "finish"
+  },
+  {
+    "id"    : "foreign_shipment",
+    "title" : "Отгрузка ЛП в РФ со склада производителя",
+    "class" : "move",
+    "state" : "middle"
+  },
+  {
+    "id"    : "foreign_import",
+    "title" : "Ввоз ЛП в РФ",
+    "class" : "move",
+    "state" : "middle"
+  },
+  {
+    "id"    : "fts_data",
+    "title" : "Таможенное оформление",
+    "class" : "accept",
+    "state" : "middle"
+  },
+  {
+    "id"    : "move_place",
+    "title" : "Перемещение ЛП между местами осуществления деятельности",
+    "class" : "move",
+    "state" : "middle"
+  },
+  {
+    "id"    : "move_info",
+    "title" : "Отгрузка ЛП со склада (в рамках оптовой торговли), обратный порядок акцептования",
+    "class" : "move",
+    "state" : "middle"
+  },
+  {
+    "id"    : "move_destruction",
+    "title" : "Передача ЛП на уничтожение",
+    "class" : "move",
+    "state" : "middle"
+  },
+  {
+    "id"    : "destruction",
+    "title" : "Уничтожение ЛП",
+    "class" : "accept",
+    "state" : "finish"
+  },
+  {
+    "id"    : "reexport",
+    "title" : "Оформление таможенной процедуры реэкспорта",
+    "class" : "move",
+    "state" : "middle"
+  },
+  {
+    "id"    : "relabeling",
+    "title" : "Переупаковка и перемаркировка ЛП",
+    "class" : "create",
+    "state" : "middle"
+  }
+]

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 (http://www.altova.com) by Admin (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="base_types.xsd"/>
+	<xs:complexType name="ref_query_clients">
+		<xs:annotation>
+			<xs:documentation>Запрос на справочник контрагентов</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="param_name" type="string128_type">
+				<xs:annotation>
+					<xs:documentation>Имя параметра</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="param_value" type="string128_type">
+				<xs:annotation>
+					<xs:documentation>Значение параметра</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="action_id" type="xs:int" use="required" fixed="201"/>
+	</xs:complexType>
+</xs:schema>

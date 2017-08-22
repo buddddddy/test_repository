@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://www.mdlp.org/wsdl/MdlpService.wsdl"
+    targetNamespace="http://www.mdlp.org/wsdl/MdlpService.wsdl"
+>
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.mdlp.org/wsdl/MdlpService.wsdl" targetNamespace="http://www.mdlp.org/wsdl/MdlpService.wsdl">
+
+            <xsd:import schemaLocation="elements.xsd" namespace=""/>
+
+            <xsd:complexType name="TypedStatus">
+                <xsd:sequence>
+                    <xsd:element minOccurs="1" maxOccurs="1" name="result" type="documents"/>
+                    <xsd:element minOccurs="0" maxOccurs="1" name="data" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:element name="sendTypedDocRequest" type="tns:sendTypedDocRequest"/>
+
+            <xsd:complexType name="sendTypedDocRequest">
+                <xsd:sequence>
+                    <xsd:element minOccurs="1" maxOccurs="1" name="documents" type="documents"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:element name="sendTypedDocResponse" type="tns:sendTypedDocResponse"/>
+
+            <xsd:complexType name="sendTypedDocResponse">
+                <xsd:sequence>
+                    <xsd:element minOccurs="1" maxOccurs="1" name="status" type="tns:TypedStatus"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="Status">
+                <xsd:sequence>
+                    <xsd:element minOccurs="1" maxOccurs="1" name="result" type="xsd:string"/>
+                    <xsd:element minOccurs="0" maxOccurs="1" name="data" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:element name="sendDocRequest" type="tns:sendDocRequest"/>
+
+            <xsd:complexType name="sendDocRequest">
+                <xsd:sequence>
+                    <xsd:element minOccurs="1" maxOccurs="1" name="data" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:element name="sendDocResponse" type="tns:sendDocResponse"/>
+
+            <xsd:complexType name="sendDocResponse">
+                <xsd:sequence>
+                    <xsd:element minOccurs="1" maxOccurs="1" name="status" type="tns:Status"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+        </xsd:schema>
+    </wsdl:types>
+
+    <wsdl:message name="sendTypedDocRequest">
+        <wsdl:part element="tns:sendTypedDocRequest" name="sendTypedDocRequest"/>
+    </wsdl:message>
+
+    <wsdl:message name="sendTypedDocResponse">
+        <wsdl:part element="tns:sendTypedDocResponse" name="sendTypedDocResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="sendDocRequest">
+        <wsdl:part element="tns:sendDocRequest" name="sendDocRequest"/>
+    </wsdl:message>
+
+    <wsdl:message name="sendDocResponse">
+        <wsdl:part element="tns:sendDocResponse" name="sendDocResponse"/>
+    </wsdl:message>
+
+    <wsdl:portType name="MdlpService">
+        <wsdl:operation name="sendTypedDoc">
+            <wsdl:input message="tns:sendTypedDocRequest" name="sendTypedDocRequest"/>
+            <wsdl:output message="tns:sendTypedDocResponse" name="sendTypedDocResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="sendDoc">
+            <wsdl:input message="tns:sendDocRequest" name="sendDocRequest"/>
+            <wsdl:output message="tns:sendDocResponse" name="sendDocResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="MdlpServiceSoap" type="tns:MdlpService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="sendTypedDoc">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="sendTypedDocRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="sendTypedDocResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendDoc">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="sendDocRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="sendDocResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="MdlpServiceService">
+        <wsdl:port binding="tns:MdlpServiceSoap" name="MdlpServiceSoap">
+            <soap:address location="http://www.mdlp.org/ws"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>

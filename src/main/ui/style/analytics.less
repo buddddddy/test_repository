@@ -1,0 +1,53 @@
+@import "less/main";
+@import "less/resources";
+@import "less/CommonMainMenu";
+@import "less/CommonControl";
+@import "less/CommonSearchControl";
+@import "less/CommonMap";
+
+.mdlp-index-page-header_box {
+  .box-sizing(border-box);
+  width: calc(~'100% - @{workarea-leftbar-width}');
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .mdlp-index-page-header_box-title {
+    font-size: 20pt;
+    color: @common-bg-color-alt1;
+  }
+}
+
+.mdlp-analytics_common_info_block {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .mdlp-analytics_common_info_block-item {
+    margin-right: 30px;
+    &:last-child { margin-right: 100px; }
+    display: block;
+    height: 20px;
+    padding-left: 25px;
+    font-family: DINCondensedC;
+    font-size: 16px;
+    &.members {
+      background: url(@members-url) 0 0 no-repeat;
+      background-size: contain;
+      color: @members-draw-color;
+    }
+    &.drugs {
+      background: url(@drugs-url) 0 0 no-repeat;
+      background-size: contain;
+      color: @drugs-draw-color;
+    }
+    &.sales {
+      background: url(@sales-url) 0 0 no-repeat;
+      background-size: contain;
+      color: @sales-draw-color;
+    }
+  }
+}
+
+//@import (inline) "./css/jqvmap.css";
+//@import (inline) "./css/maps.css";

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings
+    xmlns:annox="http://annox.dev.java.net"
+    xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+    xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
+    version="2.1"
+    jaxb:extensionBindingPrefixes="xjc annox"
+>
+
+    <jaxb:globalBindings>
+        <jaxb:javaType
+            name="java.util.Calendar"
+            xmlType="xs:dateTime"
+            parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime"
+            printMethod="javax.xml.bind.DatatypeConverter.printDateTime"
+        />
+
+        <xjc:simple/>
+        <xjc:serializable/>
+        <xjc:superInterface name="wsdl.WsdlType"/>
+    </jaxb:globalBindings>
+
+    <jaxb:bindings schemaLocation="base_ref.xsd" node="//xs:complexType" multiple="true">
+        <annox:annotate target="class">@java.lang.SuppressWarnings({"all", "unchecked"})</annox:annotate>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="200-result.xsd" node="//xs:complexType" multiple="true">
+        <annox:annotate target="class">@java.lang.SuppressWarnings({"all", "unchecked"})</annox:annotate>
+    </jaxb:bindings>
+    <!--<jaxb:bindings schemaLocation="381-move_owner.xsd">-->
+        <!--<jaxb:bindings node="//xs:complexType[@name='move_owner']//xs:element[@name='order_details']">-->
+            <!--<jaxb:class ref="org.mdlp.basestate.data.introduction.OrderDetails"/>-->
+        <!--</jaxb:bindings>-->
+    <!--</jaxb:bindings>-->
+    <!--<jaxb:bindings schemaLocation="382-receive_owner.xsd">-->
+        <!--<jaxb:bindings node="//xs:complexType[@name='receive_owner']//xs:element[@name='order_details']">-->
+            <!--<jaxb:class ref="org.mdlp.basestate.data.introduction.OrderDetails"/>-->
+        <!--</jaxb:bindings>-->
+    <!--</jaxb:bindings>-->
+    <!--<jaxb:bindings schemaLocation="341-receive_importer.xsd">-->
+        <!--<jaxb:bindings node="//xs:complexType[@name='receive_importer']//xs:element[@name='order_details']">-->
+            <!--<jaxb:class ref="org.mdlp.basestate.data.introduction.OrderDetails"/>-->
+        <!--</jaxb:bindings>-->
+    <!--</jaxb:bindings>-->
+    <!--<jaxb:bindings schemaLocation="521-recipe.xsd">-->
+        <!--<jaxb:bindings node="//xs:complexType[@name='recipe']//xs:element[@name='order_details']">-->
+            <!--<jaxb:class ref="org.mdlp.basestate.data.introduction.OrderDetails"/>-->
+        <!--</jaxb:bindings>-->
+    <!--</jaxb:bindings>-->
+    <!--<jaxb:bindings schemaLocation="531-health_care.xsd">-->
+        <!--<jaxb:bindings node="//xs:complexType[@name='health_care']//xs:element[@name='order_details']">-->
+            <!--<jaxb:class ref="org.mdlp.basestate.data.introduction.OrderDetails"/>-->
+        <!--</jaxb:bindings>-->
+    <!--</jaxb:bindings>-->
+    <!--<jaxb:bindings schemaLocation="911-unit_pack.xsd">-->
+        <!--<jaxb:bindings node="//xs:complexType[@name='unit_pack']//xs:element[@name='content']">-->
+            <!--<jaxb:class ref="org.mdlp.basestate.data.introduction.OrderDetails"/>-->
+        <!--</jaxb:bindings>-->
+    <!--</jaxb:bindings>-->
+
+</jaxb:bindings>

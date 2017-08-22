@@ -1,0 +1,139 @@
+@import "less/main";
+@import "less/CommonMainMenu";
+@import "less/CommonCollapsePanel";
+@import "less/CommonFilters";
+@import "less/CommonControl";
+@import "less/CommonTableGrid";
+@import "less/CommonPagination";
+@import "less/CommonPreloader";
+@import "less/CommonSearchControl";
+@import "less/CommonMap";
+@import "less/CommonInfoBlock";
+@import "less/resources";
+
+.mdlp-member_card-inn_block {
+  width: 100%;
+}
+
+.mdlp-member_card-toolsbar {
+  .box-sizing(border-box);
+  width: 100%;
+  //background-color: #F8F8F9;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .mdlp-member_card-search_kiz {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .mdlp-analytics_common_info_block-item {
+      margin-right: 30px;
+      &:last-child { margin-right: 100px; }
+      display: block;
+      height: 20px;
+      padding-left: 25px;
+      font-family: DINCondensedC;
+      font-size: 16px;
+      &.members {
+        background: url(@members-url) 0 0 no-repeat;
+        background-size: contain;
+        color: @members-draw-color;
+      }
+      &.drugs {
+        background: url(@drugs-url) 0 0 no-repeat;
+        background-size: contain;
+        color: @drugs-draw-color;
+      }
+      &.sales {
+        background: url(@sales-url) 0 0 no-repeat;
+        background-size: contain;
+        color: @sales-draw-color;
+      }
+    }
+  }
+
+  .mdlp-member_card-tools {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .mdlp-member_card-tools-item {
+      .box-sizing(border-box);
+      display: block;
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: auto 24px;
+      border: none;
+      margin-left: 10px;
+      cursor: pointer;
+      &.active {
+        border: 1px solid #AAA;
+        background-color: #E5F0FC;
+      }
+      &.chars {
+        background-image: url("@{common-images-path}chars-icon.png");
+      }
+      &.factory {
+        background-image: url("@{common-images-path}factory-icon.png");
+      }
+      &.filials {
+        background-image: url("@{common-images-path}filials-icon.png");
+      }
+      &.safe-warehouses {
+        background-image: url("@{common-images-path}warehouses-icon.png");
+      }
+      &.lp {
+        background-image: url("@{common-images-path}lp-icon.png");
+      }
+    }
+  }
+}
+
+.mdlp-member_info {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 30px;
+  .mdlp-member_info-title {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: @common-font-family-header;
+    font-size: 25px;
+    color: #0077BF;
+    text-align: center;
+  }
+  .mdlp-member_info-block-item {
+    margin: 0;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    font-family: @common-font-family-text;
+    font-size: 12px;
+    color: #0077BF;
+    line-height: 1.5;
+    &:last-child { margin-bottom: 0; }
+    .mdlp-member_info-block-item-link {
+      display: block;
+      font-family: @common-font-family-header;
+      font-size: 17px;
+      color: #0077BF;
+      text-decoration: underline;
+      line-height: 1;
+      margin-top: 40px;
+    }
+    .mdlp-member_info-block-item-title {
+      font-weight: bold;
+      margin-right: 5px;
+      &::after {
+        content: ":";
+      }
+    }
+    .mdlp-member_info-block-item-value {
+      font-weight: normal;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by asdads (asd qwe) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="base_ref.xsd"/>
+	<xs:include schemaLocation="base_types.xsd"/>
+	<xs:complexType name="fts_data">
+		<xs:annotation>
+			<xs:documentation>Регистрация Импортером в ИС «Маркировка» сведений о результатах таможенного оформления</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="subject_id" type="subject_id_type">
+				<xs:annotation>
+					<xs:documentation>Идентификатор организации-отправителя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="operation_date" type="datetimeoffset">
+				<xs:annotation>
+					<xs:documentation>Дата совершения операции</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="confirm_doc" type="confirm_doc_type_enum">
+				<xs:annotation>
+					<xs:documentation>Вид документа подтверждения соответствия</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="doc_num" type="document_number_200_type">
+				<xs:annotation>
+					<xs:documentation>Регистрационный номер документа подтверждения соответствия</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="doc_date" type="date_type">
+				<xs:annotation>
+					<xs:documentation>Дата регистрации документа подтверждения соответствия</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="fts_info" type="fts_gtd_info_type">
+				<xs:annotation>
+					<xs:documentation>Состав сведений, передаваемых при подаче таможенной декларации</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="custom_procedure_code" type="custom_procedure_code_enum">
+				<xs:annotation>
+					<xs:documentation>Код таможенной процедуры</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="order_details" nillable="false">
+				<xs:annotation>
+					<xs:documentation>Список продукции</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:choice maxOccurs="25000">
+						<xs:element name="sgtin" type="sign_sgtin_type">
+							<xs:annotation>
+								<xs:documentation>Номер SGTIN</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="sscc" type="sscc_type">
+							<xs:annotation>
+								<xs:documentation>Номер транспортной упаковки</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+				<xs:unique name="ux_fts_data_sgtin">
+					<xs:selector xpath="sgtin"/>
+					<xs:field xpath="."/>
+				</xs:unique>
+				<xs:unique name="ux_fts_data_sscc">
+					<xs:selector xpath="sscc"/>
+					<xs:field xpath="."/>
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="action_id" type="xs:int" use="required" fixed="335"/>
+	</xs:complexType>
+</xs:schema>

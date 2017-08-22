@@ -1,0 +1,190 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.2.RELEASE'
+    }
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("net.ltgt.gradle:gradle-apt-plugin:0.9")
+        classpath("gradle.plugin.com.intershop.gradle.jaxb:jaxb-gradle-plugin:2.0.0")
+        classpath "com.moowork.gradle:gradle-node-plugin:1.1.1"
+        classpath 'net.researchgate:gradle-release:2.4.0'
+    }
+}
+
+group "org.mdlp"
+version = "1.4.1"
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'net.ltgt.apt'
+apply plugin: 'com.intershop.gradle.jaxb'
+apply plugin: 'com.moowork.gulp'
+apply plugin: 'net.researchgate.release'
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+dependencies {
+    compileOnly("org.jetbrains:annotations:${property('jetbrains-annotations.version')}")
+    compileOnly('org.projectlombok:lombok')
+    compileOnly("com.google.auto.service:auto-service:${property('auto-service.version')}")
+    compileOnly('org.hibernate:hibernate-jpamodelgen')
+    compileOnly('org.springframework.boot:spring-boot-configuration-processor')
+
+    compile('com.google.guava:guava')
+    compile('org.apache.commons:commons-lang3')
+    compile('com.fasterxml.jackson.core:jackson-databind')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jdk8')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310')
+    compile('org.springframework.boot:spring-boot-autoconfigure')
+    compile('org.springframework.boot:spring-boot-starter-validation')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-undertow')
+    compile('org.springframework.boot:spring-boot-starter-security')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-jdbc')
+    compile('org.springframework:spring-web')
+    compile('org.liquibase:liquibase-core')
+    compile('org.springframework.boot:spring-boot-starter-web-services')
+    compile("org.jvnet.jaxb2_commons:jaxb2-basics-runtime:1.11.1")
+    compile("wsdl4j:wsdl4j:1.6.1")
+    compile('org.postgresql:postgresql')
+    compile('com.opentable.components:otj-pg-embedded:0.7.1')
+    compile('net.sf.ehcache:ehcache:2.10.3')
+    compile('org.springframework:spring-context-support:4.3.7.RELEASE')
+    compile('com.google.code.gson:gson:2.8.0')
+    compile("org.jetbrains:annotations:${property('jetbrains-annotations.version')}")
+
+    testCompileOnly('org.projectlombok:lombok')
+    testCompileOnly("com.google.auto.service:auto-service:${property('auto-service.version')}")
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+configurations {
+    all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+    all*.exclude group: 'org.apache.tomcat.embed'
+}
+
+configurations { xjc }
+dependencies {
+    xjc("org.jvnet.jaxb2_commons:jaxb2-basics:1.11.1")
+    xjc("net.java.dev.jaxb2-commons:jaxb-fluent-api:2.1.8")
+    xjc("org.jvnet.jaxb2_commons:jaxb2-basics-annotate:1.0.2")
+    xjc("org.slf4j:slf4j-simple")
+}
+
+/* UI BUILD SECTION */
+
+// NodeJS settings
+node {
+    // If true, it will download node using above parameters.
+    download = true
+    // Set the work directory for unpacking node
+    workDir = file("nodejs")
+    // Set the directory where /node_modules should be found
+    nodeModulesDir = file("src/main/ui")
+}
+// Gulp settings
+gulp {
+    // Set the directory where gulpfile.js should be found
+    workDir = file("src/main/ui")
+    // Whether colors should output on the terminal
+    colors = true
+    // Whether output from Gulp should be buffered - useful when running tasks in parallel
+    bufferOutput = false
+}
+// run npm install
+gulp_build.dependsOn 'npmInstall'
+// Dirs for change watching
+def srcDir = new File(projectDir, 'src/main/ui')
+def targetDir = new File(project.buildDir, 'ui')
+// Task for copying UI-files from temp dir to resources main static's dir
+task ui2mainStatic(type: Copy) {
+    from targetDir
+    into "${project.buildDir}/resources/main"
+}
+// Run gulp build only if inputs dir ...
+gulp_build.inputs.dir(srcDir)
+// ... and outputs dir have changed
+gulp_build.outputs.dir(targetDir)
+// Run copy task after gulp build
+gulp_build.doLast {
+    ui2mainStatic.execute()
+}
+// Run gulp build (before jar & bootRun tasks)
+jar.dependsOn gulp_build
+bootRun.dependsOn gulp_build
+
+/* /UI BUILD SECTION */
+
+jaxb {
+    javaGen {
+        mdlpService {
+            language = "wsdl"
+            packageName = "org.mdlp.wsdl"
+            //schemas = files("src/main/resources/static/wsdl/MdlpService.wsdl", "src/main/resources/static/wsdl/elements.xsd")
+            schema = file("src/main/resources/static/wsdl/MdlpService.wsdl")
+            binding = file("src/main/resources/static/wsdl/bindings.xjb")
+            extension = true
+            args.addAll([
+                '-npa',
+                '-enableIntrospection',
+                '-XtoString',
+                '-Xequals',
+                '-XhashCode',
+                '-Xcopyable',
+                '-Xfluent-api',
+                '-Xannotate',
+            ])
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    options.deprecation = true
+    options.encoding = 'UTF-8'
+    options.debug = true
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+release {
+    failOnCommitNeeded = true
+    failOnPublishNeeded = true
+    failOnSnapshotDependencies = true
+    failOnUnversionedFiles = true
+    failOnUpdateNeeded = true
+    revertOnFail = true
+    preCommitText = ''
+    preTagCommitMessage = '[Gradle Release Plugin] ${release.releaseVersion} - pre tag commit: '
+    tagCommitMessage = '[Gradle Release Plugin] ${release.releaseVersion} - creating tag : '
+    newVersionCommitMessage = '[Gradle Release Plugin] ${release.releaseVersion} - new version commit: '
+    tagTemplate = '${version}'
+    // May decide to add additional custom tasks here
+    buildTasks = ['build']
+    scmAdapters = [
+            net.researchgate.release.GitAdapter
+    ]
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.4.1'
+}

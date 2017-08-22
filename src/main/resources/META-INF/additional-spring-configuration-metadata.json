@@ -1,0 +1,9 @@
+{
+    "properties": [
+        {
+            "name": "debug.dump-servlet-data",
+            "type": "java.lang.Boolean",
+            "description": "Надо ли целиком логировать входящие и исходящие данные сервлет-контейнера"
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+  "list" : [
+    {
+      "eventId"        :  "1",
+      "eventTypeId"    :  "register_product_emission",
+      "dateTime"       : "2017-03-23T20:22:43.875645",
+      "inside"         : "downloads/exam.xlsx",
+      "memberFromName" : "ООО Ромашка",
+      "memberFromINN"  : "789012123456",
+      "memberFromKPP"  : "789012123456",
+      "memberToName"   : null,
+      "memberToINN"    : null,
+      "memberToKPP"    : null,
+      "cost" : 1200.00
+    },
+    {
+      "eventId"        :  "2",
+      "eventTypeId"    :  "move_order_s",
+      "dateTime"       : "2017-03-23T20:22:43.875645",
+      "inside"         : "downloads/exam.xlsx",
+      "memberFromName" : "ООО Ромашка",
+      "memberFromINN"  : "789012123456",
+      "memberFromKPP"  : "789012123456",
+      "memberToName"   : "ООО Василёк",
+      "memberToINN"    : "789012123456",
+      "memberToKPP"    : "789012123456",
+      "cost" : 1200.00
+    },
+    {
+      "eventId"        :  "3",
+      "eventTypeId"    :  "receive_order_s",
+      "dateTime"       : "2017-03-23T20:22:43.875645",
+      "inside"         : "downloads/exam.xlsx",
+      "memberFromName" : "ООО Василёк",
+      "memberFromINN"  : "789012123456",
+      "memberFromKPP"  : "789012123456",
+      "memberToName"   : "ООО Василёк",
+      "memberToINN"    : "789012123456",
+      "memberToKPP"    : "789012123456",
+      "cost" : 1200.00
+    },
+    {
+      "eventId"        :  "4",
+      "eventTypeId"    :  "retail_sale",
+      "dateTime"       : "2017-03-23T20:22:43.875645",
+      "inside"         : "downloads/exam.xlsx",
+      "memberFromName" : "ООО Василёк",
+      "memberFromINN"  : "789012123456",
+      "memberFromKPP"  : "789012123456",
+      "memberToName"   : null,
+      "memberToINN"    : null,
+      "memberToKPP"    : null
+    }
+  ]
+}

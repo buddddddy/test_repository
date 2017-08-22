@@ -1,0 +1,97 @@
+[
+
+  {
+
+    "id": 5,
+
+    "createdAt": "2017-04-04T14:13:20.32",
+
+    "inboundMessage": "{\"code\":0,\"kizCount\":10,\"brokenKizCount\":0,\"brokenKiz\":[]}",
+
+    "status": 200,
+
+    "statusDescription": "OK",
+
+    "method": "GET",
+
+    "uri": "http://10.31.0.10:14000/v1/kiz/result/28047def-198e-4afb-ac77-a58db6ab0997"
+
+  },
+
+  {
+
+    "id": 4,
+
+    "createdAt": "2017-04-04T14:13:20.221",
+
+    "inboundMessage": "{\"status\":2}",
+
+    "status": 200,
+
+    "statusDescription": "OK",
+
+    "method": "GET",
+
+    "uri": "http://10.31.0.10:14000/v1/kiz/status/28047def-198e-4afb-ac77-a58db6ab0997"
+
+  },
+
+  {
+
+    "id": 3,
+
+    "createdAt": "2017-04-04T14:13:19.439",
+
+    "outboundMessage": "{\"kizs\":[\"AB00000000000000000000000000000070\",\"AB00000000000000000000000000000071\",\"AB00000000000000000000000000000072\",\"AB00000000000000000000000000000073\",\"AB00000000000000000000000000000074\",\"AB00000000000000000000000000000075\",\"AB00000000000000000000000000000076\",\"AB00000000000000000000000000000077\",\"AB00000000000000000000000000000078\",\"AB00000000000000000000000000000079\"],\"properties\":{\"system_subj_id\":\"00000000000028\",\"op_date\":1490004000000,\"packing_address\":{\"aoguid\":\"aoguid\",\"houseguid\":\"houseguid\",\"room\":\"room\"},\"order_type\":1,\"batch\":\"300000001\",\"exp_date\":1580601600000,\"gtin\":\"4603179000145\"}}",
+
+    "inboundMessage": "28047def-198e-4afb-ac77-a58db6ab0997",
+
+    "status": 200,
+
+    "statusDescription": "OK",
+
+    "method": "POST",
+
+    "uri": "http://10.31.0.10:14000/v1/kiz/basestate/1"
+
+  },
+
+  {
+
+    "id": 2,
+
+    "createdAt": "2017-04-04T14:12:26.797",
+
+    "inboundMessage": "{\"error\":\"query not found\"}",
+
+    "status": 500,
+
+    "statusDescription": "Internal Server Error",
+
+    "method": "GET",
+
+    "uri": "http://10.31.0.10:14000/v1/kiz/status/3f3e41a4-f578-4c7d-b2f0-b0314f646b25"
+
+  },
+
+  {
+
+    "id": 1,
+
+    "createdAt": "2017-04-04T14:12:26.308",
+
+    "outboundMessage": "{\"kizs\":[\"AB00000000000000000000000000000070\",\"AB00000000000000000000000000000071\",\"AB00000000000000000000000000000072\",\"AB00000000000000000000000000000073\",\"AB00000000000000000000000000000074\",\"AB00000000000000000000000000000075\",\"AB00000000000000000000000000000076\",\"AB00000000000000000000000000000077\",\"AB00000000000000000000000000000078\",\"AB00000000000000000000000000000079\"],\"properties\":{\"system_subj_id\":\"00000000000028\",\"op_date\":1490004000000,\"packing_address\":{\"aoguid\":\"aoguid\",\"houseguid\":\"houseguid\",\"room\":\"room\"},\"order_type\":1,\"batch\":\"300000001\",\"exp_date\":1580601600000,\"gtin\":\"4603179000145\"}}",
+
+    "inboundMessage": "3f3e41a4-f578-4c7d-b2f0-b0314f646b25",
+
+    "status": 200,
+
+    "statusDescription": "OK",
+
+    "method": "POST",
+
+    "uri": "http://10.31.0.10:14000/v1/kiz/basestate/1"
+
+  }
+
+]

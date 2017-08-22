@@ -1,0 +1,100 @@
+@pagination-font-family : @common-font-family-label;
+@pagination-font-size : @common-font-size-input;
+@pagination-bg-color : @common-bg-color;
+@pagination-fg-color : @common-fg-color-controls;
+@pagination-active-bg-color : @common-bg-color-alt2;
+@pagination-active-fg-color : @common-fg-color;
+
+.mdlp-common-pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: @pagination-bg-color;
+  &.above {
+    margin-bottom: 10px;
+  }
+  &.under {
+    margin-top: 10px;
+  }
+  .mdlp-common-pagination-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+    .mdlp-common-pagination-refresh {
+      display: block;
+      width: image-width("@{common-images-path}pagination-refresh.png");
+      height: image-height("@{common-images-path}pagination-refresh.png");
+      background: transparent url("@{common-images-path}pagination-refresh.png") center center no-repeat;
+      margin-left: 10px;
+    }
+    .pagination {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: @pagination-font-family;
+      font-size: @pagination-font-size;
+      li {
+        padding: 5px;
+        &.active {
+          background-color: @pagination-active-bg-color;
+          &, & a, & a:active, & a span {
+            color: @pagination-active-fg-color;
+          }
+        }
+        &, & a, & a:active, & a span {
+          color: @pagination-fg-color;
+          text-decoration: none;
+        }
+        .mdlp-common-pagination-first_page {
+          display: block;
+          width: image-width("@{common-images-path}pagination-first-page.png");
+          height: image-height("@{common-images-path}pagination-first-page.png");
+          background: transparent url("@{common-images-path}pagination-first-page.png") center center no-repeat;
+        }
+        .mdlp-common-pagination-prev_page {
+          display: block;
+          width: image-width("@{common-images-path}pagination-prev-page.png");
+          height: image-height("@{common-images-path}pagination-prev-page.png");
+          background: transparent url("@{common-images-path}pagination-prev-page.png") center center no-repeat;
+        }
+        .mdlp-common-pagination-next_page {
+          display: block;
+          width: image-width("@{common-images-path}pagination-next-page.png");
+          height: image-height("@{common-images-path}pagination-next-page.png");
+          background: transparent url("@{common-images-path}pagination-next-page.png") center center no-repeat;
+        }
+        .mdlp-common-pagination-last_page {
+          display: block;
+          width: image-width("@{common-images-path}pagination-last-page.png");
+          height: image-height("@{common-images-path}pagination-last-page.png");
+          background: transparent url("@{common-images-path}pagination-last-page.png") center center no-repeat;
+        }
+      }
+    }
+  }
+  .mdlp-common-pagination-total {
+    margin-left: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: @common-font-family-header;
+    color: @common-bg-color-alt1;
+    padding: 5px;
+    background-color: transparent;
+    border-bottom: 1px solid @commom-fg-color-static-info;
+    &::before {
+      content: "Общее количество элементов:";
+      margin-right: 5px;
+      font-weight: 500;
+      font-size: 12px;
+      font-family: @common-font-family-text;
+      color: @common-fg-color;
+    }
+  }
+}

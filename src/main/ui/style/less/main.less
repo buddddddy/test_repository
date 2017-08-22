@@ -1,0 +1,398 @@
+// MIXINS
+@import "mixins";
+// COMMON SETTINGS
+@common-images-path : './images/';
+@common-fonts-path : './fonts/';
+@common-bg-color : #FFF;
+@common-bg-color-alt1 : #0066B3;
+@common-bg-color-alt2 : #E5F0FC;
+@common-bg-color-alt3 : #898B8D;
+@common-bg-color-input : #F8F8F9;
+@common-font-family-header : DINCondensedC;
+@common-font-family-label : Arial;
+@common-font-family-text : Tahoma;
+@common-font-size-h1 : 21pt;
+@common-font-size-h2 : 16pt;
+@common-font-size-h3 : 16pt;
+@common-font-size-input : 14px;
+@common-font-size-small : 12px;
+@common-fg-color : #000;
+@common-fg-color-invert : #FFF;
+@commom-fg-color-link : #0077BF;
+@commom-fg-color-error : #F00;
+@commom-fg-color-input : #B1B3B6;
+@commom-fg-color-static-info : #808285;
+@common-fg-color-controls : #B1B3B6;
+@common-border-color-input : #D1D3D4;
+// HEADER SETTINGS
+@header-height : 42px;
+@header-bg-color : @common-bg-color-alt3;
+@header-font-family : @common-font-family-text;
+@header-font-size : @common-font-size-input;
+@header-fg-user-color : @common-fg-color-invert;
+@header-fg-exit-color : @common-fg-color-invert;
+// FOOTER SETTINGS
+@footer-height : 43px;
+@footer-bg-color : @common-bg-color-alt3;
+@footer-fg-color : @common-fg-color-invert;
+@footer-font-size : @common-font-size-small;
+// TITLE SETTINGS
+@title-height : 113px;
+@title-bg-color : @common-bg-color;
+@title-delimiter : 2px solid @common-bg-color-alt2;
+// WORKAREA
+@workarea-leftbar-width : 240px;
+// DEBUG LOG PANEL
+@debug-log-height : 280px;
+
+@font-face {
+  font-family: DINCondensedC;
+  src: local("DINCondensedC"), url("@{common-fonts-path}DINCondensedC.OTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body, .mdlp-page-main {
+  padding: 0;
+  margin: 0;
+  font-family: @common-font-family-label;
+  font-size: @common-font-size-input;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-color: @common-bg-color;
+  overflow: auto;
+  //width: 1200px;
+  //margin: 0 auto!important;
+  &.not-ready {
+    background: url("@{common-images-path}preloader-big.gif") center center no-repeat;
+    .mdlp-page-main {
+      display: none;
+    }
+  }
+}
+h1, h2, h3 {
+  color: @common-fg-color;
+  margin: 0;
+}
+h1, h2 {
+  font-family: @common-font-family-header;
+  font-weight: 500;
+}
+h1 {
+  font-size: @common-font-size-h1;
+}
+h2 {
+  font-size: @common-font-size-h2;
+  &.mdlp-inner {
+    color: @common-bg-color-alt1;
+    font-size: @common-font-size-h1;
+    margin-bottom: 20px;
+  }
+}
+h3 {
+  font-family: @common-font-family-label;
+  font-size: @common-font-size-h3;
+}
+a, &:active {
+  text-decoration: none;
+  color: @commom-fg-color-link;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@import (inline) "../css/react-day-picker.css";
+@import (inline) "../css/jquery.json-viewer.css";
+
+.mdlp-page-main {
+  min-height: 100%;
+  background-color: @common-bg-color;
+  overflow: visible;
+  position: relative;
+  .box-sizing(border-box);
+  color: @common-fg-color;
+  .mdlp-page-header {
+    position: absolute;
+    z-index: 10;
+    top : 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: @header-height;
+    background-color: @header-bg-color;
+    line-height: @header-height;
+    padding-right: 30px;
+    font-family: @header-font-family;
+    font-size: @header-font-size;
+    .mdlp-page-header-messages {
+      display: none;
+      position: absolute;
+      z-index: 15;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 0;
+      text-align: center;
+      font-size: 18px;
+      overflow: hidden;
+      padding-top: 30px;
+      .box-sizing(border-box);
+      .transition(height .5s);
+      &.error {
+        background-color: @commom-fg-color-error;
+        color: @common-fg-color-invert;
+      }
+      &.show {
+        display: block;
+        border: 2px solid @common-bg-color-alt1;
+        height: 113px;
+        .transition(height .5s);
+      }
+    }
+    .mdlp-page-user_info {
+      color: @header-fg-user-color;
+      margin-right: 50px;
+      &, &:active {
+        text-decoration: underline;
+      }
+    }
+    .mdlp-page-exit {
+      color: @header-fg-exit-color;
+      &, &:active {
+        text-decoration: underline;
+      }
+    }
+  }
+  .mdlp-page-footer {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: @footer-height;
+    background-color: @footer-bg-color;
+    line-height: @footer-height;
+    padding: 0 60px;
+    //text-align: right;
+    font-family: @common-font-family-text;
+    font-size: @footer-font-size;
+    .mdlp-page-footer-version {
+      color: @footer-fg-color;
+      float: left;
+      &::before {
+        content: "Версия:";
+        margin-right: 5px;
+      }
+    }
+    .mdlp-page-footer-copyright {
+      color: @footer-fg-color;
+      float: right;
+    }
+    &::after {
+      clear: both;
+    }
+  }
+  .mdlp-page-debug-log-placeholder {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    bottom: @footer-height;
+    height: @debug-log-height;
+    border-left: 2px solid @common-fg-color-controls;
+    border-right: 2px solid @common-fg-color-controls;
+    background-color: @common-bg-color-input;
+    overflow: hidden;
+  }
+  .mdlp-page-content {
+    padding: @header-height 0 @footer-height 0;
+    .mdlp-page-title {
+      .box-sizing(border-box);
+      width: 100%;
+      height: @title-height;
+      background-color: @title-bg-color;
+      border-bottom: @title-delimiter;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 20px;
+      .mdlp-page-title-logo {
+        display: block;
+        //width: image-width("@{common-images-path}fns_logo.png");
+        //height: image-height("@{common-images-path}fns_logo.png");
+        //background: transparent url("@{common-images-path}fns_logo.png") center center no-repeat;
+        margin-right: 35px;
+      }
+      .mdlp-page-title-text {
+      }
+    }
+    .mdlp-main-view-workspace {
+      .box-sizing(border-box);
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 20px 10px;
+      .mdlp-main-view-workspace-leftbar {
+        .box-sizing(border-box);
+        width: @workarea-leftbar-width;
+      }
+      .mdlp-main-view-workspace-area {
+        .box-sizing(border-box);
+        width: calc(~'100% - @{workarea-leftbar-width}');
+        padding-left: 20px;
+      }
+    }
+  }
+}
+
+.mdlp-common-block-title {
+  display: block;
+  color: @commom-fg-color-link;
+  text-transform: uppercase;
+  font-family: @common-font-family-label;
+  font-size: @common-font-size-input;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.mdlp-doc_download_link {
+  display: inline-block;
+  width: image-width("@{common-images-path}doc_download.png");
+  height: image-height("@{common-images-path}doc_download.png");
+  background: transparent url("@{common-images-path}doc_download.png") center center no-repeat;
+}
+
+.mdlp-dialog {
+  position: fixed;
+  //font-family: Arial, Helvetica, sans-serif;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99999;
+  transition: opacity 1s ease-in;
+  pointer-events: auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .mdlp-dialog-close_btn {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    pointer-events: all;
+    &:before, &:after {
+      position: absolute;
+      display: block;
+      top: 13px;
+      right: 6px;
+      width: 18px;
+      height: 0;
+      border-top: 4px solid #000;
+      border-radius: 2px;
+      content: "";
+    }
+    &:before {
+      .rotate(45deg);
+    }
+    &:after {
+      .rotate(135deg);
+    }
+    &:hover {
+      width: 100px;
+      .transition(width .5s);
+      .mdlp-dialog-close_btn__tip {
+        display: block;
+        padding-left: 15px;
+        margin-right: 23px;
+        margin-top: 6px;
+        line-height: 1;
+        overflow: hidden;
+        &:after {
+          display: inline;
+          font-size: 13px;
+          line-height: 1;
+          vertical-align: middle;
+          color: #000;
+          content: "Закрыть";
+        }
+      }
+    }
+  }
+}
+
+.mdlp-common-resize_box {
+  .mdlp-common-resize_box-panel {
+    width: 100%;
+    height: 0;
+    border-top: 5px double @common-bg-color-alt1;
+    cursor: ns-resize;
+  }
+  .mdlp-common-resize_box-cont {
+    width: 100%;
+    height: calc(100% - 3px);
+    overflow: auto;
+  }
+}
+
+body.debug-log {
+  .mdlp-page-debug-log-placeholder {
+    display: block;
+    @import "./CommonDebugLogPanel";
+  }
+  .mdlp-page-content {
+    padding-bottom: calc(~'@{footer-height} + @{debug-log-height}');
+  }
+}
+
+.mdlp-breadcrumbs-kiz-title {
+  &.found::before {
+    color: #0077BF;
+    text-transform: uppercase;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: 600;
+    content: "КиЗ:";
+    margin-right: 10px;
+  }
+  &.not_found::before {
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ff0000;
+    content: "По указанному SGTIN данные не найдены";
+  }
+}
+
+.mdlp-bool {
+  display: inline-block;
+  width: 15px;
+  height: 14px;
+}
+.mdlp-bool-true {
+  background: transparent url("@{common-images-path}bool-true-indicator.png") 0 center no-repeat;
+}
+.mdlp-bool-false {
+  background: transparent url("@{common-images-path}bool-false-indicator.png") 0 center no-repeat;
+}

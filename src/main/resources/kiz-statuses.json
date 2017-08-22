@@ -1,0 +1,21 @@
+[
+    {
+        "id"    : "1",
+        "title" : "Маркировано",
+        "operation": "register_end_packing"
+    },
+    {
+        "id"    : "2",
+        "title" : "В обороте"
+    },
+    {
+        "id"    : "3",
+        "title" : "Выведено из оборота",
+        "operation": "retail_sale"
+    },
+    {
+        "id"    : "4",
+        "title" : "В продаже"
+    }
+
+]

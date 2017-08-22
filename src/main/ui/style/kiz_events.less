@@ -1,0 +1,42 @@
+@import "less/main";
+@import "less/CommonMainMenu";
+@import "less/CommonTableGrid";
+
+.mdlp-kiz_events-cancelled {
+  text-decoration: line-through;
+}
+
+.mdlp-kiz_events-moving {
+  @width  : image-width("@{common-images-path}simple_arrow.png");
+  @height : image-height("@{common-images-path}simple_arrow.png");
+  display: block;
+  min-height: @height;
+  &:first-child {
+    margin-bottom: 5px;
+  }
+  &:before {
+    content: "";
+    display: inline-block;
+    margin-right: 5px;
+    width: @width;
+    height: @height;
+    background-position: 0 center;
+    background-repeat: no-repeat;
+  }
+  &.red:before {
+    background-image: url("@{common-images-path}simple_arrow_right_red.png");
+  }
+  &.yellow:before {
+    background-image: url("@{common-images-path}simple_arrow_right_yellow.png");
+  }
+  &.green:before {
+    background-image: url("@{common-images-path}simple_arrow_right_green.png");
+  }
+  &.from:before {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}

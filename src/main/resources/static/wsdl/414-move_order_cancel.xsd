@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by aaaaa (sdfqewe) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="base_types.xsd"/>
+	<xs:complexType name="move_order_cancel">
+		<xs:annotation>
+			<xs:documentation>Отмена отправителем/ получателем заявки на отгрузку маркированной продукции. Для любого типа отгрузки</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="subject_id" type="subject_id_type">
+				<xs:annotation>
+					<xs:documentation>Идентификатор организации-отправителя</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="operation_date" type="date_type">
+				<xs:annotation>
+					<xs:documentation>Дата совершения операции</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="partner_id" type="subject_id_type">
+				<xs:annotation>
+					<xs:documentation>Идентификатор контрагента, который будет уведомлён об отмене заявки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="cancel_details" nillable="false">
+				<xs:annotation>
+					<xs:documentation>Список отгружаемой продукции, которую необходимо отказать</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:choice maxOccurs="25000">
+						<xs:element name="sgtin" type="sign_sgtin_type">
+							<xs:annotation>
+								<xs:documentation>Номер SGTIN</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="sscc" type="sscc_type">
+							<xs:annotation>
+								<xs:documentation>Номер транспортной упаковки</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+				<xs:unique name="ux_move_order_cancel_sgtin">
+					<xs:selector xpath="sgtin"/>
+					<xs:field xpath="."/>
+				</xs:unique>
+				<xs:unique name="ux_move_order_cancel_sscc">
+					<xs:selector xpath="sscc"/>
+					<xs:field xpath="."/>
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="action_id" type="xs:int" use="required" fixed="414"/>
+	</xs:complexType>
+</xs:schema>

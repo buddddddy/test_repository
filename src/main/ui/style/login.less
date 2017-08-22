@@ -1,0 +1,69 @@
+@import "less/main";
+
+// SETTINGS
+@login-width : 495px;
+@login-height : 330px;
+@login-bg-color-input : @common-bg-color-input;
+@login-font-size-input : @common-font-size-input;
+@login-fg-color-input : @commom-fg-color-input;
+@login-border-color-input : @common-border-color-input;
+@login-submit-fg-color : #FFF;
+@login-submit-bg-color : @common-bg-color-alt1;
+
+.mdlp-page-main.mdlp-login {
+  background-color: @common-bg-color-alt2;
+  .mdlp-page-react {
+    width: @login-width;
+    height: @login-height;
+    background-color: @common-bg-color;
+    margin-left: calc(~'50% - @{login-width}/2');
+    margin-top: 55px;
+    padding-top: 35px;
+    .mdlp-login-form-title {
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    .mdlp-login-form-container {
+      margin: 0 100px;
+      .mdlp-login-form-error {
+        font-family: @common-font-family-text;
+        font-size: @common-font-size-small;
+        color: @commom-fg-color-error;
+        text-align: center;
+      }
+      .mdlp-login-form-control {
+        display: block;
+        .box-sizing(border-box);
+        width: 100%;
+        padding: 12px 15px;
+        font-size: @login-font-size-input;
+        color: @login-fg-color-input;
+        background-color: @login-bg-color-input;
+        background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+        border: 2px solid @login-border-color-input;
+        border-radius: 0; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+        .form-control-focus(@login-border-color-input);
+        .placeholder(@login-fg-color-input);
+        margin-bottom: 10px;
+      }
+      .mdlp-login-form-submit {
+        display: block;
+        .box-sizing(border-box);
+        width: 100%;
+        padding: 17px 15px;
+        font-size: @login-font-size-input;
+        color: @login-submit-fg-color;
+        background-color: @login-submit-bg-color;
+        border: none;
+        border-radius: 9px;
+        text-transform: uppercase;
+        .form-control-focus(transparent);
+        margin-top: 20px;
+        &[disabled] {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}

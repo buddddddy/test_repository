@@ -1,0 +1,61 @@
+.mdlp-common-debug-log-panel {
+  padding: 10px 30px;
+  pre {
+    padding: 0;
+    margin: 0;
+  }
+  .mdlp-common-debug-log-item {
+    border-bottom: 1px solid @common-fg-color-controls;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    .error {
+      color: #AF0000;
+    }
+    .success {
+      color: #00AF00;
+    }
+    .black {
+      color: #000;
+    }
+    .mdlp-common-debug-log-item-title {
+      margin-bottom: 10px;
+      &::before {
+        font-weight: 600;
+        content: "Запрос:";
+        margin-right: 30px;
+      }
+    }
+    .mdlp-common-debug-log-item-message {
+      margin-bottom: 10px;
+      color: #000;
+      &::before {
+        display: inline-block;
+        margin-right: 30px;
+        font-weight: 600;
+        vertical-align: top;
+      }
+      pre {
+        font-family: dejavu sans mono, monospace;
+        display: inline-block;
+      }
+      &.out::before {
+        content: "Послали:";
+      }
+      &.in::before {
+        content: "Получили:";
+      }
+    }
+    .mdlp-common-debug-log-item-status {
+      &::before {
+        font-weight: 600;
+        margin-right: 30px;
+      }
+      &.error::before {
+        content: "Ошибка:";
+      }
+      &.success::before {
+        content: "Статус:";
+      }
+    }
+  }
+}
