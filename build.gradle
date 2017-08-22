@@ -198,6 +198,10 @@ task(printversion) << {
     println project.version
 }
 
+task(preTagCommit) << {
+    println 'do not create tag!'
+}
+
 beforeReleaseBuild.dependsOn startmessage
 afterReleaseBuild.dependsOn printversion
 
