@@ -19,11 +19,14 @@
 *.rar
 .idea
 mdlp.iml
+mdlp-ko.iml
 /src/main/ui/node_modules/
 /src/main/ui/stats.json
 /nodejs/
 /src/main/webapp/node_modules/
 logs/
+build
+.gradle/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
