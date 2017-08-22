@@ -176,7 +176,7 @@ release {
     revertOnFail = true
     preCommitText = ''
     tagTemplate = ''
-    newVersionCommitMessage = '[Gradle Release Plugin] - new version commit: '
+    newVersionCommitMessage = ''
     versionPropertyFile = 'gradle.properties'
     buildTasks = ['build']
 //
