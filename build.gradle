@@ -18,7 +18,7 @@ buildscript {
 }
 
 group "org.mdlp"
-version = "1.4.1"
+version = properties.version
 
 apply plugin: 'java'
 apply plugin: 'idea'
@@ -167,17 +167,17 @@ idea {
 }
 
 release {
-    failOnCommitNeeded = true
+    failOnCommitNeeded = false
     failOnPublishNeeded = true
     failOnSnapshotDependencies = true
-    failOnUnversionedFiles = true
+    failOnUnversionedFiles = false
     failOnUpdateNeeded = true
     revertOnFail = true
     preCommitText = ''
     preTagCommitMessage = '[Gradle Release Plugin] ${release.releaseVersion} - pre tag commit: '
     tagCommitMessage = '[Gradle Release Plugin] ${release.releaseVersion} - creating tag : '
     newVersionCommitMessage = '[Gradle Release Plugin] ${release.releaseVersion} - new version commit: '
-    tagTemplate = '${version}'
+    tagTemplate = 'tag-${version}'
     // May decide to add additional custom tasks here
     buildTasks = ['build']
     scmAdapters = [
