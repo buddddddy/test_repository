@@ -187,8 +187,8 @@ release {
     ]
 
     git {
-        requireBranch = 'master'
-        pushToRemote = 'origin'
+        requireBranch = ''
+        pushToRemote = ''
         pushToBranchPrefix = ''
         commitVersionFileOnly = false
         signTag = false
